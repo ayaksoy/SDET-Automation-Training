@@ -18,9 +18,16 @@ public class XpathTask extends BaseClass {
 
         WebElement button4 = driver.findElement(By.xpath("//button[contains() = 'Giriş']"));
 
-        WebElement button5 = driver.findElement(By.xpath("//div[@class='login-form']//input"));
+        WebElement button5 = driver.findElement(By.xpath("//div[@class='login-form']//input[@type='text' and @placeholder='Email']"));
 
         WebElement button6 = driver.findElement(By.cssSelector("#u_0_5_login"));
+
+        // practice
+
+        WebElement pw1 = driver.findElement(By.xpath("//div[@class = 'registration']//input[3]"));
+        WebElement pw2 = driver.findElement(By.xpath("//div[@class = 'registration']//input[@type = 'password']"));
+
+
 
         tearDown();
     }
