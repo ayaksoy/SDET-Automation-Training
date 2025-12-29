@@ -14,7 +14,7 @@ public class HandlingAlerts extends BaseClass {
 	
 	public static void main(String[] args) throws InterruptedException {
 
-		setUp();
+		setUp("https://neotech.vercel.app/sis-login");
 		
 		Thread.sleep(5000);
 		
