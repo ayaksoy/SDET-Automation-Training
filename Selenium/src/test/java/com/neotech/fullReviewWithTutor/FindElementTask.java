@@ -13,5 +13,7 @@ public class FindElementTask {
         driver.findElement(By.linkText("Güvenli Çıkış Yap"));
         driver.findElement(By.partialLinkText("Çıkış Yap"));
         driver.findElement(By.className("btn-danger"));
+
+        driver.quit();
     }
 }
