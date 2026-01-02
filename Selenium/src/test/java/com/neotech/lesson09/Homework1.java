@@ -25,10 +25,12 @@ TC: Update Customer Information
         setUp("http://secure.smartbearsoftware.com/samples/testcomplete11/WebOrders/login.aspx");
         driver.findElement(By.cssSelector("#ctl00_MainContent_username")).sendKeys("Tester");
         Thread.sleep(2000);
-
         driver.findElement(By.cssSelector("#ctl00_MainContent_password")).sendKeys("test");
         Thread.sleep(2000);
         driver.findElement(By.cssSelector("#ctl00_MainContent_login_button")).click();
+        WebElement mercyTd = driver.findElement(By.xpath("//tr/td[2][contains(text(), 'Susan McLaren')]"));
+
+        System.out.println(mercyTd.getText());
         Thread.sleep(2000);
         WebElement row;
         try {
@@ -38,19 +40,15 @@ TC: Update Customer Information
             System.out.println("Susan McLaren isnt present test ended");
             throw e;
         }
+
         row.findElement(By.cssSelector("input[alt = 'Edit']")).click();
         Thread.sleep(2000);
-
-
         driver.findElement(By.cssSelector("#ctl00_MainContent_fmwOrder_txtName")).clear();
         Thread.sleep(2000);
-
         driver.findElement(By.cssSelector("#ctl00_MainContent_fmwOrder_txtName")).sendKeys("Susan Ferrari");
         driver.findElement(By.cssSelector("#ctl00_MainContent_fmwOrder_TextBox6")).clear();
         Thread.sleep(2000);
-
         driver.findElement(By.cssSelector("#ctl00_MainContent_fmwOrder_TextBox6")).sendKeys("111111111111");
-        System.out.println("hello1");
         driver.findElement(By.cssSelector("#ctl00_MainContent_fmwOrder_UpdateButton")).click();
 //        {
 //            try {
@@ -68,10 +66,13 @@ TC: Update Customer Information
         Thread.sleep(2000);
 
 
-        if (cardNumber.equals("111111111111") && name.equals("Susan Ferrari"))
+        if (cardNumber.equals("111111111111") && name.equals("Susan Ferrari")) {
             System.out.println("card number and name changed test passed");
-        else
+        } else {
             System.out.println("card number or name didnt changed test failed");
+        }
+
+
         Thread.sleep(15000);
 
 

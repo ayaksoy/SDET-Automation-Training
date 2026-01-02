@@ -29,7 +29,10 @@ public class Homework2 extends BaseClass {
                 "//table[@id = 'ctl00_MainContent_orderGrid']/tbody/tr[td[3][text() = 'FamilyAlbum']]"));
         for (WebElement i : familyAlbums)
             i.findElement(By.xpath("td[1]")).click();
+        Thread.sleep(15000);
         driver.findElement(By.id("ctl00_MainContent_btnDelete")).click();
+
+
         familyAlbums = driver.findElements(By.xpath(
                 "//table[@id = 'ctl00_MainContent_orderGrid']/tbody/tr[td[3][text() = 'FamilyAlbum']]"));
         if (familyAlbums.isEmpty())
