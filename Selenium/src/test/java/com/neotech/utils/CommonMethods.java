@@ -1,14 +1,20 @@
 package com.neotech.utils;
 
+import java.io.File;
 import java.time.Duration;
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.google.common.io.Files;
 
 public class CommonMethods extends BaseClass {
 
@@ -174,6 +180,26 @@ public class CommonMethods extends BaseClass {
 	}
 
 	/*
+	 * This method switched the focus to the child window
+	 */
+	public static void switchToChildWindow() {
+		String mainWindow = driver.getWindowHandle();
+		Set<String> allWindows = driver.getWindowHandles();
+
+		for (String window : allWindows) {
+			if (!window.equals(mainWindow)) {
+				driver.switchTo().window(window);
+			}
+		}
+
+		// Alternative solution
+//		Iterator<String> it = allWindows.iterator();
+//		String window1 = it.next();
+//		String window2 = it.next();
+//		driver.switchTo().window(window2);
+	}
+
+	/*
 	 * This method returns a wait object with default wait time
 	 */
 	public static WebDriverWait getWaitObject() {
@@ -235,6 +261,36 @@ public class CommonMethods extends BaseClass {
 	public static void click(WebElement element) {
 		waitForClickability(element);
 		element.click();
+	}
+
+	/*
+	 * This method takes the screenshot of the current page and saves it under screenshots folder
+	 * 
+	 * @param fileName
+	 */
+	public static void takeScreenshot(String fileName) {
+		// create an object that can take screenshot
+		TakesScreenshot ssDriver = (TakesScreenshot) driver;
+
+		// take the screenshot using the ssDriver
+		File screenShot = ssDriver.getScreenshotAs(OutputType.FILE);
+
+		try {
+			File screenShotDir = new File("screenshots");
+
+			// check if directory exists
+			if (!screenShotDir.exists()) {
+				screenShotDir.mkdir();
+			}
+
+			File screenshotLocation = new File(screenShotDir + "/" + fileName);
+			Files.copy(screenShot, screenshotLocation);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Screenshot can not be created!!!");
+		}
+
 	}
 
 }

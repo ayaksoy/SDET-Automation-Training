@@ -19,7 +19,7 @@ public class Homework2 extends CommonMethods {
 
 //        driver.findElement(By.linkText("Help")).click();
         click(driver.findElement(By.linkText("Help")));
-        
+        wait(4);
         Set<String> allWindowHandles = driver.getWindowHandles();
         System.out.println(allWindowHandles);
 
