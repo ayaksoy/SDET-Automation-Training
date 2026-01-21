@@ -13,7 +13,6 @@ public class TestNGDemo {
         System.out.println("This is the second test method!");
     }
 
-
     @Test
     public void testThree() {
         System.out.println("this is third test method!");
