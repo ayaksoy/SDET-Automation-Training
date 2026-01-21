@@ -1,6 +1,5 @@
 package com.neotech.lesson12;
 
-import com.neotech.utils.CommonMethods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;

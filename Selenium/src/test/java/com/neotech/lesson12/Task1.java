@@ -1,28 +1,26 @@
 package com.neotech.lesson12;
 
-import org.openqa.selenium.By;
-
-import com.neotech.utils.CommonMethods;
 import com.neotech.utils.ConfigsReader;
+import org.openqa.selenium.By;
 
 public class Task1 extends CommonMethods {
 
-	// https://hrm.neotechacademy.com/
-	public static void main(String[] args) {
+    // https://hrm.neotechacademy.com/
+    public static void main(String[] args) {
 
-		setUp();
+        setUp();
 
-		sendText(driver.findElement(By.id("txtUsername")), ConfigsReader.getProperty("username"));
-		// sendText(driver.findElement(By.id("txtPassword")),
-		// ConfigsReader.getProperty("password"));
-		click(driver.findElement(By.xpath("//button[@type='submit']")));
+        sendText(driver.findElement(By.id("txtUsername")), ConfigsReader.getProperty("username"));
+        // sendText(driver.findElement(By.id("txtPassword")),
+        // ConfigsReader.getProperty("password"));
+        click(driver.findElement(By.xpath("//button[@type='submit']")));
 
-		wait(2);
+        wait(2);
 
-		takeScreenshot("HRM_blank-password-error.png");
+        takeScreenshot("HRM_blank-password-error.png");
 
-		tearDown();
+        tearDown();
 
-	}
+    }
 
 }

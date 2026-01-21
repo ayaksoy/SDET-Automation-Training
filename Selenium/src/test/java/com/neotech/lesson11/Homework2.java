@@ -1,6 +1,5 @@
 package com.neotech.lesson11;
 
-import com.neotech.utils.CommonMethods;
 import org.openqa.selenium.By;
 
 import java.util.Iterator;
