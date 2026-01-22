@@ -6,7 +6,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class Homework extends CommonMethods {
+public class HomeworkOneTest extends CommonMethods {
     /*Homework 1: HRMS Application Negative Login:
 
     1. Open chrome browser
