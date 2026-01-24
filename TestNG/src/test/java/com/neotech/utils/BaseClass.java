@@ -3,6 +3,8 @@ package com.neotech.utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import java.time.Duration;
 
@@ -10,6 +12,7 @@ public class BaseClass {
 
     public static WebDriver driver;
 
+    @BeforeMethod(alwaysRun = true)
     public static void setUp() {
         ConfigsReader.readProperties(Constants.CONFIGURATION_FILEPATH);
         String browser = ConfigsReader.getProperty("browser");
@@ -34,6 +37,7 @@ public class BaseClass {
         driver.get(url);
     }
 
+    @BeforeMethod(alwaysRun = true)
     public static void setUp(String url) {
         ConfigsReader.readProperties(Constants.CONFIGURATION_FILEPATH);
         String browser = ConfigsReader.getProperty("browser");
@@ -56,6 +60,7 @@ public class BaseClass {
         driver.get(url);
     }
 
+    @AfterMethod(alwaysRun = true)
     public static void tearDown() {
         if (driver != null) {
             driver.quit();
