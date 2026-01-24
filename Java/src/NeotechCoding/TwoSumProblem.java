@@ -1,9 +1,11 @@
+package NeotechCoding;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class Temp {
+public class TwoSumProblem {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
@@ -25,23 +27,14 @@ public class Temp {
     }
 
     public static int[] twoSum(int[] nums, int target) {
-        // Write your code here without changing main method
-        Map<Integer,Integer> numbers = new HashMap<>();
-        int first = 0;
-        int second = 0;
+        Map<Integer,Integer> list = new HashMap<>();
+
 
         for (int i = 0; i < nums.length; i++) {
-            int diff = target - nums[i];
-            if(numbers.containsKey(diff)){
-                first = numbers.get(diff);
-                second = i;
-                break;
-            }
-            numbers.put(nums[i],i);
+            if(list.containsKey(target - nums[i]))
+                return new int[]{list.get(target - nums[i]),i};
+            list.put(nums[i],i);
         }
-        return new int[]{first,second};
-
+        return nums;
     }
-
-
 }
