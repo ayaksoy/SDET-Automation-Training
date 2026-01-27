@@ -37,28 +37,28 @@ public class BaseClass {
         driver.get(url);
     }
 
-    @BeforeMethod(alwaysRun = true)
-    public static void setUp(String url) {
-        ConfigsReader.readProperties(Constants.CONFIGURATION_FILEPATH);
-        String browser = ConfigsReader.getProperty("browser");
-
-        driver = null;
-        switch (browser.toLowerCase()) {
-            case "chrome": {
-                driver = new ChromeDriver();
-                break;
-            }
-            case "firefox": {
-                driver = new FirefoxDriver();
-                break;
-            }
-            default:
-                break;
-        }
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-        driver.manage().window().maximize();
-        driver.get(url);
-    }
+//    @BeforeMethod(alwaysRun = true)
+//    public static void setUp(String url) {
+//        ConfigsReader.readProperties(Constants.CONFIGURATION_FILEPATH);
+//        String browser = ConfigsReader.getProperty("browser");
+//
+//        driver = null;
+//        switch (browser.toLowerCase()) {
+//            case "chrome": {
+//                driver = new ChromeDriver();
+//                break;
+//            }
+//            case "firefox": {
+//                driver = new FirefoxDriver();
+//                break;
+//            }
+//            default:
+//                break;
+//        }
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+//        driver.manage().window().maximize();
+//        driver.get(url);
+//    }
 
     @AfterMethod(alwaysRun = true)
     public static void tearDown() {

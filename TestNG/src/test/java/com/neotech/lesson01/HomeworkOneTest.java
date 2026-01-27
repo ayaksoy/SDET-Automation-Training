@@ -3,7 +3,6 @@ package com.neotech.lesson01;
 import com.neotech.utils.CommonMethods;
 import org.openqa.selenium.By;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class HomeworkOneTest extends CommonMethods {
@@ -15,10 +14,10 @@ public class HomeworkOneTest extends CommonMethods {
     4. Leave password field empty
     5. Verify error message with text "Password cannot be empty" is displayed.
      */
-    @BeforeMethod
-    public void openBrowser() {
-        setUp("https://hrm.neotechacademy.com/");
-    }
+//    @BeforeMethod
+//    public void openBrowser() {
+//        setUp("https://hrm.neotechacademy.com/");
+//    }
 
     @AfterMethod
     public void closeBrowser() {

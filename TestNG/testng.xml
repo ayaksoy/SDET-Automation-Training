@@ -2,18 +2,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true"
-          name="/Users/ahmet/development/Java/NeotechAcademy-QA-Bootcamp/TestNG/src/test/java/com/neotech/lesson03/GroupsDemoTest.java">
-        <groups>
-            <run>
-                <include name="regression"/>
-                <exclude name="broken"/>
-            </run>
-        </groups>
+          name="/Users/ahmet/development/Java/NeotechAcademy-QA-Bootcamp/TestNG/src/test/java/com/neotech/lesson03/Homework1.java">
         <classes>
-            <class name="com.neotech.lesson01.HomeworkOneTest"/>
-            <class name="com.neotech.lesson01.TestNGAnnotations"/>
-            <class name="com.neotech.lesson01.TestNGDemo"/>
-            <class name="com.neotech.lesson03.GroupsDemoTest"/>
+            <class name="com.neotech.lesson03.Homework1">
+                <methods>
+                    <include name="loginAndAddDetails"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
