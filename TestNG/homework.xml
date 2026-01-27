@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="HOMEWORK SUITE">
+    <test verbose="3" preserve-order="true"
+          name="/Users/ahmet/development/Java/NeotechAcademy-QA-Bootcamp/TestNG/src/test/java/com/neotech/lesson03/Homework1.java">
+        <groups>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.neotech.lesson03.Homework1"/>
+        </classes>
+    </test>
+</suite>
