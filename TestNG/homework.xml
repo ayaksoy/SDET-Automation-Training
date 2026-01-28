@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="HOMEWORK SUITE">
+    <listeners>
+        <listener class-name="com.neotech.utils.Listener"></listener>
+    </listeners>
     <test verbose="3" preserve-order="true"
           name="/Users/ahmet/development/Java/NeotechAcademy-QA-Bootcamp/TestNG/src/test/java/com/neotech/lesson03/Homework1.java">
         <groups>
