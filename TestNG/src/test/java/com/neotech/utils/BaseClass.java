@@ -13,7 +13,7 @@ public class BaseClass {
     public static WebDriver driver;
 
     @BeforeMethod(alwaysRun = true)
-    public static void setUp() {
+    public void setUp() {
         ConfigsReader.readProperties(Constants.CONFIGURATION_FILEPATH);
         String browser = ConfigsReader.getProperty("browser");
 
@@ -61,7 +61,7 @@ public class BaseClass {
 //    }
 
     @AfterMethod(alwaysRun = true)
-    public static void tearDown() {
+    public void tearDown() {
         if (driver != null) {
             driver.quit();
         }
