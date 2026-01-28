@@ -2,6 +2,7 @@ package com.neotech.lesson03;
 
 import com.neotech.utils.CommonMethods;
 import com.neotech.utils.ConfigsReader;
+import com.neotech.utils.ExcelUtility;
 import org.openqa.selenium.By;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -16,7 +17,7 @@ public class Homework1 extends CommonMethods {
         };
     }
 
-    @Test(dataProvider = "loginDetails", groups = "regression")
+    @Test(dataProvider = "excelData", groups = "regression")
     public void loginAndAddDetails(String firstName, String lastName, String userName, String password) {
         sendText(driver.findElement(By.id("txtUsername")), ConfigsReader.getProperty("username"));
         sendText(driver.findElement(By.id("txtPassword")), ConfigsReader.getProperty("password"));
@@ -40,5 +41,11 @@ public class Homework1 extends CommonMethods {
         takeScreenshot(firstName + lastName + ".png");
     }
 
+    @DataProvider(name = "excelData")
+    public Object[][] getExcelData() {
+        String filePath = System.getProperty("user.dir") + "/testdata/Excel.xlsx";
+        String sheetName = "Employee";
 
+        return ExcelUtility.excelIntoArray(filePath, sheetName);
+    }
 }
