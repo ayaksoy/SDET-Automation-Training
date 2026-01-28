@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+    <test verbose="2" preserve-order="true"
+          name="/Users/ahmet/development/Java/NeotechAcademy-QA-Bootcamp/TestNG/src/test/java/com/neotech/tests/LoginTest.java">
+        <classes>
+            <class name="com.neotech.tests.LoginTest">
+                <methods>
+                    <exclude name="invalidPasswordLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
